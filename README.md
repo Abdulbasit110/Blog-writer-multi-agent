@@ -6,11 +6,13 @@
 
 ## 🚀 Overview
 
+![multi agent blog writer.png](<multi agent blog writer.png>)
+
+
 The **Multi-Agent Blog Writing System (Crew AI)** is an innovative project that utilizes cutting-edge technologies to automate the process of creating well-researched, human-like blogs. This system is designed to bridge the gap between AI automation and human creativity by incorporating the latest advancements in **Agentic AI**.
 
 This project features a **multi-agent architecture** that autonomously plans, writes, and edits blog posts, ensuring they are accurate, engaging, and up-to-date with the latest trends.
 
-![multi agent blog writer.png](<multi agent blog writer.png>)
 
 ## 📁 Project Structure
 
