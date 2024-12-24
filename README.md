@@ -100,7 +100,7 @@ For questions or collaboration, feel free to connect:
 
 - **Author**: Abdul Basit
 - **GitHub**: [Abdulbasit110](https://github.com/Abdulbasit110)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/abdul-basit-231204255/)
+- **LinkedIn**: [Abdul Basit](https://www.linkedin.com/in/abdul-basit-231204255/)
 
 ---
 
