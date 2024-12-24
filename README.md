@@ -1,5 +1,5 @@
 
-```markdown
+
 # Multi-Agent Blog Writing System - Crew AI
 
 ![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -12,13 +12,13 @@ This project features a **multi-agent architecture** that autonomously plans, wr
 
 ## 📁 Project Structure
 
-```
+
 multi-agent/
 │
 ├── .gitignore       # Specifies files and directories ignored by Git
 ├── crew.ipynb       # Jupyter Notebook containing the core implementation
 ├── requirements.txt # Python dependencies for the project
-```
+
 
 ### Core Components
 
@@ -48,8 +48,8 @@ To set up and run the project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Abdulbasit110/multi-agent.git
-   cd multi-agent
+   git clone https://github.com/Abdulbasit110/Blog-writer-multi-agent
+   cd crew.ipynb
    ```
 
 2. **Install dependencies:**
@@ -100,7 +100,7 @@ For questions or collaboration, feel free to connect:
 
 - **Author**: Abdul Basit
 - **GitHub**: [Abdulbasit110](https://github.com/Abdulbasit110)
-- **LinkedIn**: [Your LinkedIn Profile](#)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/abdul-basit-231204255/)
 
 ---
 
