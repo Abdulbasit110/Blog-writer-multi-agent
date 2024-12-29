@@ -1,5 +1,4 @@
 
-
 # Multi-Agent Blog Writing System - Crew AI
 
 ![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -8,27 +7,32 @@
 
 ![multi agent blog writer.png](<multi agent blog writer.png>)
 
-
 The **Multi-Agent Blog Writing System (Crew AI)** is an innovative project that utilizes cutting-edge technologies to automate the process of creating well-researched, human-like blogs. This system is designed to bridge the gap between AI automation and human creativity by incorporating the latest advancements in **Agentic AI**.
 
 This project features a **multi-agent architecture** that autonomously plans, writes, and edits blog posts, ensuring they are accurate, engaging, and up-to-date with the latest trends.
 
+---
 
 ## 📁 Project Structure
 
-
+```
 multi-agent/
 │
-├── .gitignore       # Specifies files and directories ignored by Git
-├── crew.ipynb       # Jupyter Notebook containing the core implementation
-├── requirements.txt # Python dependencies for the project
+├── client/
+│   └── bloggpt/          # Next.js frontend for blog generation
+│       ├── pages/        # Next.js pages
+│       ├── components/   # Reusable React components
+│       ├── actions/      # API calls to the FastAPI backend
+│       ├── tailwind.config.js
+│       ├── package.json
+│       └── ...
+│
+│── crewai.ipynb      # Jupyter Notebook with FastAPI server and AI logic
+│── requirements.txt  # Python dependencies
+│── ...
+```
 
-
-### Core Components
-
-1. **`crew.ipynb`**: The implementation of the multi-agent system, including the Planner, Writer, and Editor agents.
-2. **`requirements.txt`**: A list of all Python libraries and dependencies required to run the system.
-3. **`.gitignore`**: Configuration to ignore unnecessary files during version control.
+---
 
 ## 🌟 Features
 
@@ -36,42 +40,77 @@ multi-agent/
 - **Writer Agent**: Generates the blog content using the **Gemini 2.0-Flash-EXP** LLM.
 - **Editor Agent**: Refines the content for clarity, engagement, and accuracy.
 - **Integration with Serper Web Search**: Fetches the latest information and trends.
+- **FastAPI Backend**: Handles blog generation requests.
+- **Next.js Frontend**: Provides a sleek user interface for input and blog display.
 - **End-to-End Automation**: Delivers a complete, polished blog with references.
+
+---
 
 ## ⚙️ Technologies Used
 
+### Backend
+- **CREW AI**: For Creating multi agent system.
+- **FastAPI**: For serving the AI-powered blog generation API.
+- **Python**: For scripting and implementation.
 - **LangChain**: For managing multi-agent workflows.
 - **Gemini 2.0-Flash-EXP**: As the language model powering the system.
 - **Serper Web Search Tool**: To gather real-time data and trends.
-- **Python**: For scripting and implementation.
-- **Jupyter Notebook**: For development and demonstration.
+
+### Frontend
+- **Next.js**: For building the client-side application.
+- **React**: For creating dynamic UI components.
+- **Tailwind CSS**: For styling.
+- **Shadcn  UI**: Components.
+
+---
 
 ## 🛠 Installation
 
-To set up and run the project, follow these steps:
-
-1. **Clone the repository:**
+### Backend Setup (FastAPI Server)
+1. **Install Dependencies**:
+   Ensure Python 3.8+ is installed. Install the required Python libraries:
    ```bash
-   git clone https://github.com/Abdulbasit110/Blog-writer-multi-agent
-   cd crew.ipynb
+   pip install -r server/requirements.txt
    ```
 
-2. **Install dependencies:**
-   Ensure you have Python 3.8+ installed. Then, run:
+2. **Run the FastAPI Server**:
+   Open the `crewai.ipynb` notebook and run the cells to start the FastAPI server.
+   - **Server URL**: `http://127.0.0.1:8002`
+
+---
+
+### Frontend Setup (Next.js)
+1. **Navigate to the Frontend Directory**:
    ```bash
-   pip install -r requirements.txt
+   cd client/bloggpt
    ```
 
-3. **Run the notebook:**
-   Open `crew.ipynb` in Jupyter Notebook or Jupyter Lab and execute the cells.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Frontend URL**: `http://localhost:3000`
+
+---
 
 ## 🧠 How It Works
 
-1. **Input Query**: The user provides a topic or query.
-2. **Planning**: The Planner Agent structures the content using the Serper Web Search Tool.
-3. **Writing**: The Writer Agent generates a detailed blog draft with the help of the Gemini LLM.
-4. **Editing**: The Editor Agent refines the draft to ensure quality and accuracy.
-5. **Output**: A complete blog post is generated, including references to the latest information.
+1. **User Input**: The user enters a topic through the Next.js frontend.
+2. **API Request**: The frontend sends a POST request to the FastAPI server running at `http://127.0.0.1:8002/generate-blog/`.
+3. **Blog Generation**:
+   - The FastAPI server processes the request using `crewai.ipynb`.
+   - The AI agents (Planner, Writer, Editor) collaboratively generate a polished blog.
+4. **Response**: The FastAPI server returns the generated blog in Markdown format.
+5. **Frontend Rendering**:
+   - The blog is rendered using `ReactMarkdown` with proper Markdown styling.
+
+---
 
 ## 🎯 Use Cases
 
@@ -79,24 +118,15 @@ To set up and run the project, follow these steps:
 - **Research Documentation**: Generate research summaries or articles with minimal effort.
 - **Trend Analysis**: Create content based on the latest trends in various domains.
 
+---
+
 ## 📝 Future Enhancements
 
 - **Multi-modal Capabilities**: Incorporate image and video generation.
 - **Advanced Customization**: Enable user-specific writing styles.
 - **Workflow Orchestration**: Add support for managing multiple blogs simultaneously.
 
-## 🤝 Contribution
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new branch (`feature-xyz`).
-3. Commit your changes.
-4. Submit a pull request.
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
+---
 
 ## 🌐 Contact
 
@@ -108,5 +138,7 @@ For questions or collaboration, feel free to connect:
 
 ---
 
-Elevating AI creativity—one blog at a time! 🌟
-``` 
+**Elevating AI creativity—one blog at a time! 🌟**
+
+--- 
+
