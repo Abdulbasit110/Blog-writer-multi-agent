@@ -2,3 +2,5 @@ exampro_env/
 .env
 crewai+scrapgraph.ipynb
 # client/
+api/
+.codegpt

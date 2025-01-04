@@ -1,37 +1,42 @@
-"use client";
-
-import { useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 interface BlogInputFormProps {
-  onSubmit: (topic: string) => void;
+  onSubmit: (topic: string) => void
+  loading: boolean
 }
 
-const BlogInputForm: React.FC<BlogInputFormProps> = ({ onSubmit }) => {
-  const [topic, setTopic] = useState<string>("");
+const BlogInputForm: React.FC<BlogInputFormProps> = ({ onSubmit, loading }) => {
+  const [topic, setTopic] = useState("")
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (topic.trim()) {
-      onSubmit(topic);
+      onSubmit(topic.trim())
     }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <Input
-        type="text"
-        placeholder="Enter a topic..."
-        value={topic}
-        onChange={(e) => setTopic(e.target.value)}
-        className="w-full p-3 rounded-md border border-gray-300 focus:ring focus:ring-blue-300 text-black"
-      />
-      <Button type="submit" className="w-full bg-blue-600 text-white">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="space-y-2">
+        <Label htmlFor="topic">Blog Topic</Label>
+        <Input
+          id="topic"
+          type="text"
+          placeholder="Enter your blog topic"
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          required
+        />
+      </div>
+      <Button type="submit" disabled={loading || !topic.trim()} className="w-full">
         Generate Blog
       </Button>
     </form>
-  );
-};
+  )
+}
 
-export default BlogInputForm;
+export default BlogInputForm
+
