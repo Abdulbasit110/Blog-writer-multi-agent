@@ -15,7 +15,6 @@ export const generateBlog = async (topic: string): Promise<any> => {
             throw new Error("Failed to generate blog");
         }
         const result = await response.json()
-        console.log(result)
         return (result);
     } catch (error) {
         console.error(error);

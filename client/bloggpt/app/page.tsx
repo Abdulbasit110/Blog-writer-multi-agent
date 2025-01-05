@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { marked } from "marked";
 
 const BlogGeneratorPage: React.FC = () => {
   const [blog, setBlog] = useState<string | null>(null);
@@ -29,7 +30,11 @@ const BlogGeneratorPage: React.FC = () => {
     try {
       const blogData = await generateBlog(topic);
       const rawBlog = blogData.blog.raw.replace(/^markdown`?/, "").trim();
-      setBlog(rawBlog);
+      const cleanedBlog = blogData.blog.raw
+        .replace(/^markdown[\s`]*/, "")
+        .trim();
+      const htmlBlog: any = marked(cleanedBlog);
+      setBlog(htmlBlog);
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -61,8 +66,11 @@ const BlogGeneratorPage: React.FC = () => {
               <Button variant="outline" onClick={handleReset} className="mb-4">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Generate Another Blog
               </Button>
-              <div className="prose lg:prose-xl dark:prose-invert max-w-none">
-                <div dangerouslySetInnerHTML={{ __html: blog }} />
+              <div
+                className="prose lg:prose-xl dark:prose-invert max-w-none"
+                dangerouslySetInnerHTML={{ __html: blog }}
+              >
+                {/* <div dangerouslySetInnerHTML={{ __html: blog }} /> */}
                 {/* <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
                   {blog}
                 </ReactMarkdown> */}
