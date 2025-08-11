@@ -1,0 +1,30 @@
+[project]
+name = "bloggpt-backend"
+version = "0.1.0"
+description = "FastAPI backend replicating CrewAI multi-agent blog writer notebook"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115.6",
+  "uvicorn>=0.34.0",
+  "python-dotenv>=1.0.1",
+  "crewai>=0.76.9",
+  "crewai-tools>=0.36.0",
+  "PyYAML>=6.0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27.0",
+  "pytest>=8.2.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+  "httpx>=0.27.0",
+  "pytest>=8.2.0",
+]
+
+ 
+
+

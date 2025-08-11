@@ -1,0 +1,14 @@
+app:
+  host: 127.0.0.1
+  port: 8002
+  cors_origins:
+    - http://localhost:3000
+    - http://127.0.0.1:3000
+
+llm:
+  model: gemini/gemini-2.0-flash-exp
+
+crew:
+  verbose: true
+
+
